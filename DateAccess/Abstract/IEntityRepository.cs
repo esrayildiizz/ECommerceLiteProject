@@ -8,13 +8,14 @@ namespace DataAccess.Abstract
     public interface IEntityRepository<T>
     {
         //Bütün ürünleri çek getir.
-        List<T> GetAll();
-        T Get(Expression<Func<T, bool>> filter); 
+        //Şartlı listeleme
+        List<T> GetAll(Expression<Func<T, bool>> filter = null);
+        T Get(Expression<Func<T, bool>> filter);  //tek bir data getirmek için
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
-        //Şartlı listeleme
-        List<T> List(Expression<Func<T, bool>> filter);
+        
+        
 
 
     }
