@@ -5,7 +5,9 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IEntityRepository<T>
+    //T tipi için kısıtlama getirdik yani herkes istediğini yazamasın.
+    //generic constaint :kısıtlama
+    public interface IEntityRepository<T> where T:class
     {
         //Bütün ürünleri çek getir.
         //Şartlı listeleme
