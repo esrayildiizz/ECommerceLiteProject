@@ -11,7 +11,12 @@ namespace DataAccess.Concrete.EntityFramework
     {
         public void Add(Product entity)
         {
-            throw new NotImplementedException();
+            //Bu yapı c# a özel bir yapı:
+            //NorthwindContext bellekte işi bitince atılsın.
+            using (NorthwindContext context =new NorthwindContext())
+            {
+
+            }
         }
 
         public void Delete(Product entity)
