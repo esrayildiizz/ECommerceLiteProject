@@ -3,6 +3,7 @@ using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
@@ -44,7 +45,13 @@ namespace DataAccess.Concrete.EntityFramework
 
         public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            using (NorthwindContext context = new NorthwindContext())
+            {
+                 
+                return filter == null //filtre = null mı
+                    ? context.Set<Product>().ToList()  //değil ise Product a yerleş
+                    : context.Set<Product>().Where(filter).ToList(); //null ise
+            }
         }
 
         public void Update(Product entity)
