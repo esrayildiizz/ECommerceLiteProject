@@ -17,8 +17,9 @@ namespace DataAccess.Concrete
         }
 
 
-        //public DbSet<Category> Categories { get; set; }
-        //public DbSet<Customer> Customers { get; set; }
-        //public DbSet<Product> Products { get; set; }
+        //Benim hangi class ım hangi tabloya karşılık gelmeli.Aşağıda yazdıklarım veri tabanına yansıyacak olan tablolarım.
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }
