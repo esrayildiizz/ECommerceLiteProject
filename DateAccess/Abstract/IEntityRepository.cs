@@ -8,7 +8,9 @@ namespace DataAccess.Abstract
 {
     //T tipi için kısıtlama getirdik yani herkes istediğini yazamasın.
     //generic constaint :kısıtlama
-    public interface IEntityRepository<T> where T:class,IEntity
+    // T nin tipi bir class olmalı ve class ta IEntity nin içinde olmalı.
+    //IEntity de new lenebiliyor olmalıdır.
+    public interface IEntityRepository<T> where T:class,IEntity,new()
     {
         //Bütün ürünleri çek getir.
         //Şartlı listeleme
