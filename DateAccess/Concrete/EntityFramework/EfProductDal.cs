@@ -42,7 +42,7 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (NorthwindContext context = new NorthwindContext())
             {
-                return context.Set<Product>().SingleOrDefault(filter);
+                return context.Set<Product>().SingleOrDefault(filter); //filter a göre bir tane değer döndür.
             }
         }
 
