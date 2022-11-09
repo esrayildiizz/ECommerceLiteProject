@@ -12,7 +12,8 @@ namespace DataAccess.Concrete
         //projem hangi veri tabanı ile ilişkili 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
+            //sql server kullanıcaz. o zaman sql server a nasıl bağlanacagımı belirtmem lazım.
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Northwind;Trusted_Connection=true");
         }
 
 
