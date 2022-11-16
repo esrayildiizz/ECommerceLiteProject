@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Core.DataAccess.EntityFramework
 {
-    public class EfEntityRepositoryBase
+    public class EfEntityRepositoryBase<TEntity,TContext>
     {
     }
 }
