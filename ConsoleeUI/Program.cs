@@ -10,7 +10,7 @@ namespace ConsoleeUI
         static void Main(string[] args)
         {
             //CategoryTest();
-            //ProductTest();
+            ProductTest();
 
         }
 
@@ -27,9 +27,9 @@ namespace ConsoleeUI
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
 
-            foreach (var product in productManager.GetByUnıtPrice(40, 100))
+            foreach (var product in productManager.GetProductDetails())
             {
-                Console.WriteLine(product.ProductName);
+                Console.WriteLine(product.ProductName + " / "+product.CategoryName);
             }
         }
     }
