@@ -41,7 +41,7 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
-        public TEntity Get(Expression<Func<TEntity, bool>> filter) //tek datagetiricek unutma.
+        public TEntity Get(Expression<Func<TEntity, bool>> filter) //tek data getiricek unutma.
         {
             using (TContext context = new TContext())
             {
