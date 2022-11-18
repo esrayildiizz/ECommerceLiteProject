@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Unitilies.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
@@ -12,6 +13,8 @@ namespace Business.Concrete
     public class ProductManager : IProductService
     {
 
+
+
         IProductDal _productDal;
 
         public ProductManager(IProductDal productDal) //Constructor metot.
@@ -19,11 +22,12 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
-        public void Add(Product product)
+        public IResult Add(Product product)
         {
             //Business kodlarını buraya yazarız.
             //örneğin kurallar vs varsa onlara bakıp sonra Add işlemi gerçekleşsin.
             _productDal.Add(product);
+            return new Result(true,"Ürün eklendi.");
         }
 
         public List<Product> GetAll()
@@ -38,7 +42,7 @@ namespace Business.Concrete
 
         public Product GetById(int productId)
         {
-            throw new NotImplementedException();
+            return _productDal.Get(x => x.ProductId == productId);
         }
 
         public List<Product> GetByUnıtPrice(decimal min, decimal max)
