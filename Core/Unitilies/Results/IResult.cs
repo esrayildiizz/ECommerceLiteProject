@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Core.Unitilies.Results
 {
+    //Results dosyası içinceki soyut interface olarak düşün.
     //Temel voidler için başlangıç.
     public interface IResult
     {
