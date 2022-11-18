@@ -27,7 +27,7 @@ namespace Business.Concrete
             //Business kodlarını buraya yazarız.
             //örneğin kurallar vs varsa onlara bakıp sonra Add işlemi gerçekleşsin.
             _productDal.Add(product);
-            return new Result(true,"Ürün eklendi.");
+            return new Result(true,"Yeni Ürün eklendi.");
         }
 
         public List<Product> GetAll()
