@@ -9,6 +9,7 @@ namespace Core.Unitilies.Results
     {
         //constructor metotun kendi içinde başka yapılarla çalışmasına mükemmel bir örnek.
         //ilk result çalıştığında ben ikincisininde çalışmasını istiyorsam : koyup istediğimi yani ikinciyi(tek parametreliyi) yazabilirim.
+        //bu işlemi yapma sebebimiz ctor metot üzerindeki ağırlığı almak yani paylaştırmak.
         public Result(bool success, string message):this(success)
         {
             Message = message;
