@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Unitilies.Results;
+using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,6 @@ namespace Business.Abstract
         List<Product> GetByUnıtPrice(decimal min, decimal max);
         List<ProductDetailDto> GetProductDetails();
         Product GetById(int productId); //tek başına bir ürün döndürür.
-        void Add(Product product); //void olduğu için birşey döndürmüyor.
+        IResult Add(Product product); //void olduğu için birşey döndürmüyor. biz void yerine bundan sonra IResult yazdık.
     }
 }
