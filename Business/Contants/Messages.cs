@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,5 +10,7 @@ namespace Business.Contants
     {
         public static string ProductAdded = "Ürün eklendi.";
         public static string ProductNameInvalid = "Ürün ismi geçersiz..";
+        internal static string MaintenanceTime ="Sistem bakımda";
+        internal static string ProductsListed = "Ürün listelendi.";
     }
 }
