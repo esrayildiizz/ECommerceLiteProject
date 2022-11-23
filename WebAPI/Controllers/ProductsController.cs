@@ -12,7 +12,7 @@ namespace WebAPI.Controllers
     [ApiController]  //attrıbute:bir class ile ilgili bilgi verme 
     public class ProductsController : ControllerBase
     {
-
+        //get için test uyguladık.
         [HttpGet]
         public List<Product> Get()
         {
