@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Business.Abstract;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,16 +13,37 @@ namespace WebAPI.Controllers
     [ApiController]  //attrıbute:bir class ile ilgili bilgi verme 
     public class ProductsController : ControllerBase
     {
-        //get için test uyguladık.
-        [HttpGet]
-        public List<Product> Get()
+        IProductService _productService;
+        public ProductsController(IProductService productService)
         {
-            return new List<Product>
-            {
-                new Product{ProductId=1, ProductName="Elma"},
-                new Product{ProductId=2, ProductName="Armut"},
-            };
+            _productService = productService;
         }
-             
+
+
+        [HttpGet("getall")]
+        public IActionResult GetAll()
+        {
+            var result = _productService.GetAll();
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
+
+        [HttpPost("add")]
+        public IActionResult Add(Product product)
+        {
+            var result = _productService.Add(product);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
     }
 }
