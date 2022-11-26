@@ -13,7 +13,14 @@ namespace WebAPI.Controllers
     [ApiController]  //attrıbute:bir class ile ilgili bilgi verme 
     public class ProductsController : ControllerBase
     {
+        // naming convention
+        // IoC Container--Inversion Of Control
+        //Losely Coupled:Gevşek bağımlılık
+        //Bir bağımlılığı var ama soyuta bir bağımlılığı var yani soyut değişirse bir sıkıntı çıkmaz.
+
+        
         IProductService _productService;
+
         public ProductsController(IProductService productService)
         {
             _productService = productService;
