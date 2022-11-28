@@ -27,6 +27,11 @@ namespace Business.Concrete
         {
             //Business kodlarını buraya yazarız.
             //örneğin kurallar vs varsa onlara bakıp sonra Add işlemi gerçekleşsin.
+            if (product.UnitPrice <= 0)
+            {
+               // return new ErrorResult(Messages.UnitPriceInvalid);
+            }
+
             if (product.ProductName.Length < 2)
             {
                 //Burada parantez içinde sürekli uzun uzun yazmaktansa Messages adında oluşturduğum sabiti çağırdım.
